@@ -1,0 +1,2 @@
+# My Resume
+A mobile-responsive HTML version of my resume using React and styled-components. On mobile, the sidebar will automatically hide and is replaced by a menu toggle button. Clicking the button shows the sidebar and darkens the background. Clicking off of the sidebar (onto the background) hides the sidebar again. If the sidebar is open and the window resizes to a larger width than the mobile breakpoint, the mobile sidebar hides automatically.
