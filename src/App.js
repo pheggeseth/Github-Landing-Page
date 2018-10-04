@@ -31,12 +31,21 @@ const COLORS = {
 };
 
 const ICONS = {
-  react: '/icons/react.svg',
-  redux: '/icons'
+  'React': '/icons/react.svg',
+  'AngularJS': '/icons/AngularJS.svg',
+  'Node.js': '/icons/Node.js.svg',
+  'Express': '/icons/Express.svg',
+  'Redux': '/icons/Redux.svg',
+  'Redux-Saga': '/icons/Redux-Saga.svg',
+  'PostgreSQL': '/icons/PostgreSQL.svg',
+  'MongoDB': '/icons/MongoDB.svg',
+  'JavaScript': '/icons/JavaScript.svg',
+  'HTML': '/icons/HTML.svg',
+  'CSS': '/icons/CSS.svg',
+  'Python': '/icons/Python.svg',
 };
 
 const Container = styled.div`
-  // height: 100vh;
   background: ${COLORS.BACKGROUND};
 `;
 
@@ -46,8 +55,6 @@ const CardsContainer = styled.div`
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 250px;
-  grid-auto-rows: 200px;
   grid-gap: ${CONTENT_MARGIN}px;
 `;
 
@@ -62,13 +69,14 @@ const CardContent = styled.div`
 `;
 
 const Card = styled.div`
-  height: calc(100% - ${CARD_PADDING * 2}px);
+  // height: calc(100% - ${CARD_PADDING * 2}px);
   border-radius: 5px;
   box-shadow: ${BOX_SHADOWS[0]};
   background-color: ${COLORS.CARD_WHITE};
   color: ${COLORS.BLACK};
   padding: ${CARD_PADDING}px;
   margin-top: 0px;
+  
 
   ${props => props.withImage
   ? `margin-top: ${CARD_IMAGE_HANGOVER}px;
@@ -91,12 +99,7 @@ const Card = styled.div`
     }
   }}
 
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-
-  // :hover {
-  //   cursor: pointer;
-  //   box-shadow: ${BOX_SHADOWS[3]};
-  // }
+  // transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 `;
 
 const CardImage  = styled(Card)`
@@ -112,7 +115,7 @@ const CardImage  = styled(Card)`
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: auto;
+  // overflow: auto;
 `;
 
 const Gravatar = styled.div`
@@ -163,7 +166,10 @@ const AboutMe = props => (
       <CardTitle>About Me</CardTitle>
       <CardHeadline>I love crafting creative solutions to complex, interesting problems.</CardHeadline>
       <CardBody>
-        Hi! I'm Paul, and I'm a Full-Stack Web Developer. I have the creativity and drive of a conservatory-trained musician, the inquisitive mind of a philosopher, and the analytical brain of an engineer.
+        Hi! I'm Paul, and I'm a Full-Stack Web Developer.
+        I have the creativity and drive of a conservatory-trained musician, 
+        the inquisitive mind of a philosopher, 
+        and the analytical brain of an engineer.
       </CardBody>
     </Card>
   </CardContainer>
@@ -178,13 +184,18 @@ const Contact = props => (
       <CardContent>
         <CardTitle>Contact</CardTitle>
         <CardHeadline>Paul Heggeseth</CardHeadline>
-        <CardBody>
+        <ul>
+            <li>(413) 672-7334</li>
+            <li>pheggeseth@gmail.com</li>
+            <li>Github LinkedIn</li>
+          </ul>
+        {/* <CardBody>
           <ul>
             <li>(413) 672-7334</li>
             <li>pheggeseth@gmail.com</li>
             <li>Github LinkedIn</li>
           </ul>
-        </CardBody>
+        </CardBody> */}
       </CardContent>
     </Card>
   </CardContainer>
@@ -214,14 +225,14 @@ const SkillTile = styled.div`
 
   & > div.icon-container > img {
     width: 100%;
-    filter: saturate(80%);
+    filter: saturate(90%);
   }
 `;
 
 const Skill = props => (
   <SkillTile>
     <div className="icon-container">
-      <img src={`/icons/${props.name}.svg`} />
+      <img src={ICONS[props.name]} />
     </div>
     <div>{props.name}</div>
   </SkillTile>
@@ -262,16 +273,16 @@ const AboutThisPage = props => (
     <Card {...props}>
       <CardTitle {...props}>About This Page</CardTitle>
       <CardBody {...props}>
-        This landing page was custom-built with React, styled-components, and CSS Grid.
-        To learn more about how I made it, check out the README here.
+        I custom-built this landing page with React, styled-components, and CSS Grid.
+        Checkout the README.
       </CardBody>
     </Card>
   </CardContainer>
 );
 
 const HoneyberryImage = styled(CardImage)`
-  height: 125px;
-  background-color: #6aa0c3;
+  // height: 125px;
+  background-color: ${COLORS.LIGHT_ACCENT_BLUE};
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' 
     viewBox='0 0 260 260'%3E%3Cg 
     fill-rule='evenodd'%3E%3Cg 
@@ -288,27 +299,56 @@ const HoneyberryImage = styled(CardImage)`
   }
 `;
 
-// const HoneyberryTitle = styled.h1`
-//   font-family: Oleo Script Swash Caps;
-//   font-size: 80px;
-//   color: white;
-//   margin: 0;
-//   &::after {
-//     content: "Honeyberry"
-//   }
-// `;
-
 const SoloProject = props => (
   <CardContainer {...props}>
     <Card withImage {...props}>
       <HoneyberryImage />
-      <CardTitle>Solo Project</CardTitle>
+      <CardTitle {...props}>Solo Project</CardTitle>
       {/* <CardHeadline>Honeyberry</CardHeadline> */}
-      <CardBody>
+      <CardBody {...props}>
         For my solo project at Prime Digital Academy, I created Honeyberry,
         a mobile-first, grocery list manager progressive web app 
         designed to save shoppers time at the store by automatically sorting
         shopping lists based on how to a user likes to move through a particular store.
+        It was built with React, Redux, Redux-Saga, and styled-components.
+        Take a look on Github.
+      </CardBody>
+    </Card>
+  </CardContainer>
+);
+
+const OddissiiImage = styled(CardImage)`
+  background-color: ${COLORS.MAIN_BLUE};
+  height: 125px;
+  font-size: 80px;
+  color: ${COLORS.CARD_WHITE};
+  &::after {
+    content: "odissii"
+  }
+`;
+
+const GroupProject = props => (
+  <CardContainer {...props}>
+    <Card withImage {...props}>
+      <OddissiiImage />
+      <CardTitle {...props}>Group Project</CardTitle>
+      <CardBody {...props}>
+        As my group project for Prime Digital Academy, 
+        I collaborated directly with three other developers to help create odissi, 
+        a mobile-first, progressive web app to help supervisors provide feedback
+        and performance reviews to their employees in an equitable way,
+        while allowing upper management to monitor supervisor feedback trends over time.
+      </CardBody>
+    </Card>
+  </CardContainer>
+);
+
+const ReactBattleship = props => (
+  <CardContainer {...props}>
+    <Card {...props}>
+      <CardTitle {...props}>React Battleship</CardTitle>
+      <CardBody>
+        I tought myself React by building a two-player Battleship game.
       </CardBody>
     </Card>
   </CardContainer>
@@ -322,8 +362,10 @@ class App extends Component {
           <AboutMe rows="1" columns="2" />
           <Contact rows="2" />
           <Skills darkAccent rows="3" />
-          <AboutThisPage black />
+          <AboutThisPage />
           <SoloProject rows="2" columns="2" />
+          <GroupProject rows="2" columns="2" />
+          <ReactBattleship black />
         </CardsContainer>
       </Container>
     );
