@@ -42,7 +42,7 @@ const ICONS = {
   'JavaScript': '/icons/JavaScript.svg',
   'HTML': '/icons/HTML.svg',
   'CSS': '/icons/CSS.svg',
-  'Python': '/icons/Python.svg',
+  'styled-components': '/icons/styled-components.png',
 };
 
 const Container = styled.div`
@@ -262,7 +262,12 @@ const Skills = props => (
         <Skill name="JavaScript" />
         <Skill name="HTML" />
         <Skill name="CSS" />
-        <Skill name="Python" />
+        <SkillTile>
+          <div className="icon-container">
+            <img src={ICONS['styled-components']} />
+          </div>
+          <div>styled-comp</div>
+        </SkillTile>
       </SkillsGrid>
     </Card>
   </CardContainer>
@@ -274,7 +279,7 @@ const AboutThisPage = props => (
       <CardTitle {...props}>About This Page</CardTitle>
       <CardBody {...props}>
         I custom-built this landing page with React, styled-components, and CSS Grid.
-        Checkout the README.
+        Checkout the <a href="https://github.com/pheggeseth/Github-Landing-Page" target="_blank">README</a> to learn more.
       </CardBody>
     </Card>
   </CardContainer>
@@ -311,7 +316,7 @@ const SoloProject = props => (
         designed to save shoppers time at the store by automatically sorting
         shopping lists based on how to a user likes to move through a particular store.
         It was built with React, Redux, Redux-Saga, and styled-components.
-        Take a look on Github.
+        Take a look on <a href="https://github.com/pheggeseth/honeyberry" target="_blank">GitHub</a>.
       </CardBody>
     </Card>
   </CardContainer>
