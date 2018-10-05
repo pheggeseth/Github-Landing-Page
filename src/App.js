@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+
+import { faPhoneSquare, faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import gravatar from './images/gravatar.jpg';
+import soloProjectScreenshot from './images/screenshots/1-list.png';
 
 const DESKTOP_BREAKPOINT = 1024;
-const HEADER_HEIGHT = 200;
 const CONTENT_MARGIN = 30;
 const CARD_PADDING = 30;
 const CARD_IMAGE_HANGOVER = 30;
@@ -15,17 +20,10 @@ const BOX_SHADOWS = [
   '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)'
 ];
 const COLORS = {
-  // BACKGROUND: '#272C40',
-  // BACKGROUND: '#363E5B',
-  // BACKGROUND: '#2E344E',
-  // BACKGROUND: '#343B56',
   BACKGROUND: '#363D48',
   BLACK: '#23252A',
-  // BACKGROUND: '#383D49',
   CARD_WHITE: '#EBE5E2',
-  // MAIN_BLUE: '#075EB1',
   MAIN_BLUE: '#0A4782',
-  // DARK_ACCENT_BROWN: '#774F39',
   DARK_ACCENT_BROWN: '#593B2A',
   LIGHT_ACCENT_BLUE: '#6AA0C3' 
 };
@@ -154,7 +152,7 @@ const CardHeadline = styled.h2`
   
 `;
 
-const CardBody = styled.p`
+const CardBody = styled.div`
   margin: 0;
   margin-top: 10px;
   padding: 0;
@@ -167,13 +165,45 @@ const AboutMe = props => (
       <CardHeadline>I love crafting creative solutions to complex, interesting problems.</CardHeadline>
       <CardBody>
         Hi! I'm Paul, and I'm a Full-Stack Web Developer.
-        I have the creativity and drive of a conservatory-trained musician, 
+        I have the creativity and persistence of a conservatory-trained musician, 
         the inquisitive mind of a philosopher, 
         and the analytical brain of an engineer.
+        Please expore this page to learn more about my skills and experience.
+        I'd love to connect about any questions you may have, or about potential employment opportunities!
       </CardBody>
     </Card>
   </CardContainer>
 );
+
+const ContactList = styled.ul`
+  list-style: none;
+  padding: 0;
+`;
+
+const ContactMethod = styled.li`
+  height: 30px;
+  // border: 1px solid black;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: stretch;
+  & > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  & > .contact-icon {
+    width: 30px;
+  }
+  & > .contact-icon > svg {
+    height: 100%;
+    width: 100%;
+  }
+  & > .contact-detail {
+    font-size: 1.1em;
+    margin-bottom: 2px;
+    padding-left: 10px;
+  }
+`;
 
 const Contact = props => (
   <CardContainer {...props}>
@@ -184,18 +214,24 @@ const Contact = props => (
       <CardContent>
         <CardTitle>Contact</CardTitle>
         <CardHeadline>Paul Heggeseth</CardHeadline>
-        <ul>
-            <li>(413) 672-7334</li>
-            <li>pheggeseth@gmail.com</li>
-            <li>Github LinkedIn</li>
-          </ul>
-        {/* <CardBody>
-          <ul>
-            <li>(413) 672-7334</li>
-            <li>pheggeseth@gmail.com</li>
-            <li>Github LinkedIn</li>
-          </ul>
-        </CardBody> */}
+        <ContactList>
+          <ContactMethod>
+            <span className="contact-icon"><FontAwesomeIcon icon={faPhoneSquare} /></span>
+            <span className="contact-detail">(413) 672-7334</span>
+          </ContactMethod>
+          <ContactMethod>
+            <span className="contact-icon"><FontAwesomeIcon icon={faEnvelopeSquare} /></span>
+            <span className="contact-detail"><a href="mailto:pheggeseth@gmail.com">pheggeseth@gmail.com</a></span>
+          </ContactMethod>
+          <ContactMethod>
+            <span className="contact-icon"><FontAwesomeIcon icon={faGithub} /></span>
+            <span className="contact-detail"><a href="https://github.com/pheggeseth" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+          </ContactMethod>
+          <ContactMethod>
+            <span className="contact-icon"><FontAwesomeIcon icon={faLinkedin} /></span>
+            <span className="contact-detail"><a href="https://www.linkedin.com/in/paul-heggeseth-44913132/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+          </ContactMethod>
+        </ContactList>
       </CardContent>
     </Card>
   </CardContainer>
@@ -210,8 +246,6 @@ const SkillsGrid = styled.div`
 `;
 
 const SkillTile = styled.div`
-  // display: grid;
-  // grid-template-rows: 1fr 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -232,23 +266,15 @@ const SkillTile = styled.div`
 const Skill = props => (
   <SkillTile>
     <div className="icon-container">
-      <img src={ICONS[props.name]} />
+      <img src={ICONS[props.name]} alt={props.name}/>
     </div>
     <div>{props.name}</div>
   </SkillTile>
-  // <div style={{display: 'grid'}}>
-  //   <div>
-  //     <img src={`/icons/${props.name}.svg`} style={{width: '100%', maxHeight: '100%'}}/>
-  //   </div>
-  //   <div>React</div>
-  // </div>
-  
 );
 
 const Skills = props => (
   <CardContainer {...props}>
     <Card {...props}>
-      {/* <CardTitle {...props}>Skills</CardTitle> */}
       <CardHeadline {...props}>Skills</CardHeadline>
       <SkillsGrid>
         <Skill name="React" />
@@ -264,7 +290,7 @@ const Skills = props => (
         <Skill name="CSS" />
         <SkillTile>
           <div className="icon-container">
-            <img src={ICONS['styled-components']} />
+            <img src={ICONS['styled-components']} alt="styled-components" />
           </div>
           <div>styled-comp</div>
         </SkillTile>
@@ -278,8 +304,8 @@ const AboutThisPage = props => (
     <Card {...props}>
       <CardTitle {...props}>About This Page</CardTitle>
       <CardBody {...props}>
-        I custom-built this landing page with React, styled-components, and CSS Grid.
-        Checkout the <a href="https://github.com/pheggeseth/Github-Landing-Page" target="_blank">README</a> to learn more.
+        This landing page is not a cookie-cutter template. I custom-built it with React, styled-components, and CSS Grid.
+        Checkout the <a href="https://github.com/pheggeseth/Github-Landing-Page" target="_blank" rel="noopener noreferrer">README</a> to learn more.
       </CardBody>
     </Card>
   </CardContainer>
@@ -308,15 +334,43 @@ const SoloProject = props => (
   <CardContainer {...props}>
     <Card withImage {...props}>
       <HoneyberryImage />
-      <CardTitle {...props}>Solo Project</CardTitle>
-      {/* <CardHeadline>Honeyberry</CardHeadline> */}
+      <CardTitle {...props}>React Solo Project</CardTitle>
       <CardBody {...props}>
-        For my solo project at Prime Digital Academy, I created Honeyberry,
-        a mobile-first, grocery list manager progressive web app 
-        designed to save shoppers time at the store by automatically sorting
-        shopping lists based on how to a user likes to move through a particular store.
-        It was built with React, Redux, Redux-Saga, and styled-components.
-        Take a look on <a href="https://github.com/pheggeseth/honeyberry" target="_blank">GitHub</a>.
+        <div style={{display: 'flex'}}>
+          <div style={{marginRight: CARD_PADDING}}>
+            <img src={soloProjectScreenshot} style={{width: '200px'}} alt="solo project screenshot" />
+          </div>
+          <div>
+            <CardHeadline>The Problem</CardHeadline>
+            <div style={{margin: '10px 0'}}>
+              When shopping for groceries, it's easy to forget items on your list,
+              causing you to waste time by back-tracking across stores to areas you've already visited.
+              Your list should automatically be sorted by how you, personally, like to move through a store.
+            </div>
+            <CardHeadline>The Solution</CardHeadline>
+            <div style={{margin: '10px 0'}}>
+              So I created Honeyberry, 
+              a mobile-first, progressive web app that gives the user the power to sort their
+              shopping lists in the exact order they want by maintaining custom sorting "areas" for each store.
+            </div>
+            <CardHeadline>Built With</CardHeadline>
+            <div style={{margin: '10px 0'}}>
+              React, Redux, Redux-Saga, Node.js, Express, PostgreSQL, Passport, styled-components
+            </div>
+            <CardTitle {...props}> Take a look on <a href="https://github.com/pheggeseth/honeyberry" target="_blank" rel="noopener noreferrer">GitHub</a></CardTitle>
+          </div>
+        </div>
+      </CardBody>
+    </Card>
+  </CardContainer>
+);
+
+const AngularJSCapstone = props => (
+  <CardContainer {...props}>
+    <Card {...props}>
+      <CardTitle {...props}>AngularJS Solo Project</CardTitle>
+      <CardBody {...props}>
+
       </CardBody>
     </Card>
   </CardContainer>
@@ -366,9 +420,11 @@ class App extends Component {
         <CardsContainer>
           <AboutMe rows="1" columns="2" />
           <Contact rows="2" />
-          <Skills darkAccent rows="3" />
+          <Skills darkAccent rows="2" />
           <AboutThisPage />
+          
           <SoloProject rows="2" columns="2" />
+          <AngularJSCapstone />
           <GroupProject rows="2" columns="2" />
           <ReactBattleship black />
         </CardsContainer>
@@ -378,29 +434,3 @@ class App extends Component {
 }
 
 export default App;
-
-// const Header = styled.div`
-//   width: 100vw;
-//   height: ${HEADER_HEIGHT}px;
-//   background-color: ${COLORS.CARD_WHITE};
-//   position: fixed;
-//   top: 0;
-//   display: flex;
-//   justify-content: center;
-//   align-items: stretch;
-// `;
-
-// const HeaderContent = styled.div`
-//   max-width: ${DESKTOP_BREAKPOINT}px;
-//   border: 1px solid black;
-//   padding: ${CONTENT_MARGIN}px;
-//   display: flex;
-//   flex-wrap: wrap;
-// `;
-
-
-
-// const Name = styled.div`
-//   // width: 500px;
-//   // height: 100%;
-// `;

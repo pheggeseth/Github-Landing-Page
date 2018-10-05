@@ -11,3 +11,13 @@ body {
   font-weight: 300;
   line-height: 1.5;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  background-color: #6AA0C3;
+  color: #EBE5E2;
+}
