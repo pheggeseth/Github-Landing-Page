@@ -83,7 +83,11 @@ export const SoloProject = props => (
             <div style={{margin: '10px 0'}}>
               React, Redux, Redux-Saga, Node.js, Express, PostgreSQL, Passport, styled-components
             </div>
-            Take a look on <a href="https://github.com/pheggeseth/honeyberry" target="_blank" rel="noopener noreferrer">GitHub</a>
+            Take a look on <a href="https://github.com/pheggeseth/honeyberry" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a> and <a href="https://honeyberry.herokuapp.com/#/home" target="_blank" rel="noopener noreferrer">
+              Heroku
+            </a>.
           </div>
         </SoloProjectContent>
       </CardBody>

@@ -18,21 +18,11 @@ import { AboutThisPage } from './AboutThisPage';
 import { SoloProject } from './SoloProject';
 import { GroupProject } from './GroupProject';
 import { AngularJSCapstone } from './AngularJSCapstone';
+import { ReactBattleship } from './ReactBattleship';
 
 const Container = styled.div`
   background-color: ${COLORS.BACKGROUND};
 `;
-
-const ReactBattleship = props => (
-  <CardContainer {...props}>
-    <Card {...props}>
-      <CardTitle {...props}>React Battleship</CardTitle>
-      <CardBody>
-        I tought myself React by building a two-player Battleship game.
-      </CardBody>
-    </Card>
-  </CardContainer>
-);
 
 class App extends Component {
   render() {
