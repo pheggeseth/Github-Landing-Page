@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { 
-  // CardsContainer, 
   CardContainer, 
   Card, 
   CardBody, 
@@ -18,7 +17,7 @@ export const AngularJSCapstone = props => (
         As a capstone to learning AngularJS at Prime Digital Academy, 
         I was tasked with created a full-stack application in one weekend. 
         I chose to make a project time tracker application called Punch Out, inspired by the classic Nintendo game. 
-        Repo's on <a href="https://github.com/pheggeseth/Punch-Out">GitHub</a>.
+        Repo's on <a href="https://github.com/pheggeseth/Punch-Out" target="_blank" rel="noopener noreferrer">GitHub</a>.
       </CardBody>
     </Card>
   </CardContainer>

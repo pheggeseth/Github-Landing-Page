@@ -1,11 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CardContainer, Card, CardImage, CardHeadline, CardTitle, CardBody } from './CardComponents';
+
+import { 
+  CardContainer, 
+  Card, 
+  CardImage, 
+  CardHeadline, 
+  CardTitle, 
+  CardBody 
+} from './CardComponents';
+
 import { 
   COLORS,
   MOBILE_BREAKPOINT,
   CARD_PADDING,
-  // CONTENT_MARGIN 
 } from './constants';
 
 import soloProjectScreenshot from './images/screenshots/1-list.png';
@@ -75,7 +83,7 @@ export const SoloProject = props => (
             <div style={{margin: '10px 0'}}>
               React, Redux, Redux-Saga, Node.js, Express, PostgreSQL, Passport, styled-components
             </div>
-            <CardTitle {...props}> Take a look on <a href="https://github.com/pheggeseth/honeyberry" target="_blank" rel="noopener noreferrer">GitHub</a></CardTitle>
+            Take a look on <a href="https://github.com/pheggeseth/honeyberry" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
         </SoloProjectContent>
       </CardBody>
