@@ -17,7 +17,7 @@ export const AngularJSCapstone = props => (
         As a capstone to learning AngularJS at Prime Digital Academy, 
         I was tasked with created a full-stack application in one weekend. 
         I chose to make a project time tracker application called Punch Out, inspired by the classic Nintendo game. 
-        Repo's on <a href="https://github.com/pheggeseth/Punch-Out" target="_blank" rel="noopener noreferrer">GitHub</a> and <a href="https://ancient-lake-49937.herokuapp.com" target="_blank" rel="noopener noreferrer">Heroku</a>.
+        Repo's on <a href="https://github.com/pheggeseth/Punch-Out" target="_blank" rel="noopener noreferrer">GitHub</a> and <a href="https://punch-out-pheggeseth.herokuapp.com" target="_blank" rel="noopener noreferrer">Heroku</a>.
       </CardBody>
     </Card>
   </CardContainer>
