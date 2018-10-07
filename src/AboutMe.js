@@ -2,7 +2,6 @@ import React from 'react';
 import { 
   CardContainer, 
   Card, 
-  // CardImage, 
   CardHeadline, 
   CardTitle, 
   CardBody 

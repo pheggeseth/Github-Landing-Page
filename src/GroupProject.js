@@ -7,11 +7,8 @@ import {
   CardContainer, 
   Card, 
   CardImage, 
-  // CardHeadline, 
   CardTitle, 
   CardBody,
-  // CardBody,
-  // CardContent, 
 } from './CardComponents';
 
 const OddissiiImage = styled(CardImage)`

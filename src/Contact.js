@@ -8,13 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import gravatar from './images/gravatar.jpg';
 
 import {
-  // DESKTOP_BREAKPOINT,
-  // TABLET_BREAKPOINT,
-  // MOBILE_BREAKPOINT,
   CONTENT_MARGIN,
-  // CARD_PADDING,
-  // BOX_SHADOWS,
-  // CARD_IMAGE_HANGOVER,
   COLORS
 } from './constants';
 
@@ -24,7 +18,6 @@ import {
   CardImage, 
   CardHeadline, 
   CardTitle, 
-  // CardBody,
   CardContent, 
 } from './CardComponents';
 
@@ -40,8 +33,6 @@ const Gravatar = styled.div`
     0 1px 3px rgba(0,0,0,0.4);
   // margin: ${CONTENT_MARGIN}px auto;
 `;
-
-
 
 const ContactList = styled.ul`
   list-style: none;

@@ -5,10 +5,6 @@ import { COLORS } from './constants';
 
 import { 
   CardsContainer, 
-  CardContainer, 
-  Card, 
-  CardBody, 
-  CardTitle 
 } from './CardComponents';
 
 import { AboutMe } from './AboutMe';
