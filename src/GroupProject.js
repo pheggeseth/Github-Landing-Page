@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { COLORS } from './constants';
+import { STYLE_CONSTANTS } from './constants';
 
 import { 
   CardContainer, 
@@ -12,10 +12,10 @@ import {
 } from './CardComponents';
 
 const OddissiiImage = styled(CardImage)`
-  background-color: ${COLORS.MAIN_BLUE};
+  background-color: ${STYLE_CONSTANTS.COLORS.MAIN_BLUE};
   height: 125px;
   font-size: 80px;
-  color: ${COLORS.CARD_WHITE};
+  color: ${STYLE_CONSTANTS.COLORS.CARD_WHITE};
   &::after {
     content: "odissii"
   }

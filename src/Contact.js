@@ -7,10 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import gravatar from './images/gravatar.jpg';
 
-import {
-  CONTENT_MARGIN,
-  COLORS
-} from './constants';
+import { STYLE_CONSTANTS } from './constants';
 
 import { 
   CardContainer, 
@@ -31,7 +28,7 @@ const Gravatar = styled.div`
   box-shadow: 
     0 3px 6px rgba(0,0,0,0.2),
     0 1px 3px rgba(0,0,0,0.4);
-  // margin: ${CONTENT_MARGIN}px auto;
+  // margin: ${STYLE_CONSTANTS.CONTENT_MARGIN}px auto;
 `;
 
 const ContactList = styled.ul`
@@ -67,7 +64,7 @@ const ContactMethod = styled.li`
 export const Contact = props => (
   <CardContainer {...props}>
     <Card withImage>
-      <CardImage color={COLORS.MAIN_BLUE} height="180px">
+      <CardImage color={STYLE_CONSTANTS.COLORS.MAIN_BLUE} height="180px">
         <Gravatar />
       </CardImage>
       <CardContent>

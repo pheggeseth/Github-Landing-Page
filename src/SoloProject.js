@@ -10,16 +10,12 @@ import {
   CardBody 
 } from './CardComponents';
 
-import { 
-  COLORS,
-  MOBILE_BREAKPOINT,
-  CARD_PADDING,
-} from './constants';
+import { STYLE_CONSTANTS } from './constants';
 
 import soloProjectScreenshot from './images/screenshots/1-list.png';
 
 const HoneyberryImage = styled(CardImage)`
-  background-color: ${COLORS.LIGHT_ACCENT_BLUE};
+  background-color: ${STYLE_CONSTANTS.COLORS.LIGHT_ACCENT_BLUE};
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' 
     viewBox='0 0 260 260'%3E%3Cg 
     fill-rule='evenodd'%3E%3Cg 
@@ -29,13 +25,13 @@ const HoneyberryImage = styled(CardImage)`
     
   font-family: Oleo Script Swash Caps;
   font-size: 80px;
-  color: ${COLORS.CARD_WHITE};
+  color: ${STYLE_CONSTANTS.COLORS.CARD_WHITE};
 
   &::after {
     content: "Honeyberry"
   }
 
-  @media only screen and (max-width: ${MOBILE_BREAKPOINT}px) {
+  @media only screen and (max-width: ${STYLE_CONSTANTS.MOBILE_BREAKPOINT}px) {
     font-size: 50px;
   }
 `;
@@ -43,15 +39,15 @@ const HoneyberryImage = styled(CardImage)`
 const SoloProjectContent = styled.div`
   display: flex;
 
-  @media only screen and (max-width: ${MOBILE_BREAKPOINT}px) {
+  @media only screen and (max-width: ${STYLE_CONSTANTS.MOBILE_BREAKPOINT}px) {
     flex-direction: column;
   }
 `;
 
 const SoloProjectScreenshot = styled.div`
-  margin-right: ${CARD_PADDING}px;
+  margin-right: ${STYLE_CONSTANTS.CARD_PADDING}px;
 
-  @media only screen and (max-width: ${MOBILE_BREAKPOINT}px) {
+  @media only screen and (max-width: ${STYLE_CONSTANTS.MOBILE_BREAKPOINT}px) {
     margin: 0 auto;
   }
 `;

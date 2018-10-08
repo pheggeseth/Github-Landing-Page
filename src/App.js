@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { COLORS } from './constants';
+import { STYLE_CONSTANTS } from './constants';
 
 import { 
   CardsContainer, 
@@ -17,7 +17,7 @@ import { AngularJSCapstone } from './AngularJSCapstone';
 import { ReactBattleship } from './ReactBattleship';
 
 const Container = styled.div`
-  background-color: ${COLORS.BACKGROUND};
+  background-color: ${STYLE_CONSTANTS.COLORS.BACKGROUND};
 `;
 
 class App extends Component {
